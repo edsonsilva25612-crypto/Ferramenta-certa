@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://edsonsilva25612-crypto.github.io/Ferramenta-certa/sitemap.xml
