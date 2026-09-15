@@ -1,12 +1,14 @@
 :root{
-  --bg:#f5f5f2;
-  --card:#fff;
-  --text:#171717;
-  --muted:#666;
+  --bg:#242424;
+  --card:#303030;
+  --card2:#292929;
+  --text:#f1f1f1;
+  --muted:#b8b8b8;
   --brand:#e28b18;
   --brand2:#b96b05;
-  --dark:#181818;
-  --line:#e5e5e5;
+  --dark:#151515;
+  --line:#444;
+  --light:#3a3a3a;
 }
 
 *{
@@ -36,15 +38,15 @@ a{
   margin:auto;
 }
 
-/* CABEÇALHO */
+/* HEADER */
 
 header{
   position:sticky;
   top:0;
   z-index:20;
-  background:rgba(24,24,24,.97);
+  background:rgba(17,17,17,.97);
   color:#fff;
-  border-bottom:1px solid #333;
+  border-bottom:1px solid #3d3d3d;
 }
 
 .nav{
@@ -85,6 +87,10 @@ nav{
   font-size:.95rem;
 }
 
+nav a{
+  transition:.2s;
+}
+
 nav a:hover{
   color:var(--brand);
 }
@@ -100,12 +106,13 @@ nav a:hover{
 /* HERO */
 
 .hero{
-  background:linear-gradient(
-    135deg,
-    #171717 0%,
-    #292929 65%,
-    #3a260f 100%
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #141414 0%,
+      #252525 60%,
+      #3a260f 100%
+    );
   color:#fff;
   padding:82px 0;
 }
@@ -146,7 +153,7 @@ h1 em{
   margin-bottom:28px;
 }
 
-/* PESQUISA */
+/* BUSCA */
 
 .search{
   display:flex;
@@ -162,30 +169,31 @@ h1 em{
   outline:0;
   padding:16px;
   font-size:1rem;
+  color:#222;
 }
 
 .search button{
   border:0;
   background:var(--brand);
+  color:#111;
   padding:0 20px;
   font-weight:900;
   cursor:pointer;
 }
 
-.results{
-  margin-top:20px;
-  color:#ddd;
-  font-weight:700;
+.search button:hover{
+  background:#f0a22b;
 }
 
 /* CARD DO HERO */
 
 .hero-card{
-  background:#fff;
-  color:#171717;
+  background:#303030;
+  color:#f1f1f1;
+  border:1px solid #444;
   border-radius:20px;
   padding:28px;
-  box-shadow:0 20px 50px #0005;
+  box-shadow:0 20px 50px #0008;
 }
 
 .hero-card h3{
@@ -200,7 +208,8 @@ h1 em{
 }
 
 .quick div{
-  border:1px solid var(--line);
+  border:1px solid #4a4a4a;
+  background:#292929;
   padding:14px;
   border-radius:12px;
   font-weight:800;
@@ -228,7 +237,7 @@ section{
   color:var(--muted);
 }
 
-/* CATEGORIAS */
+/* CARDS */
 
 .grid{
   display:grid;
@@ -246,7 +255,8 @@ section{
 
 .card:hover{
   transform:translateY(-4px);
-  box-shadow:0 12px 30px #0000000d;
+  border-color:#666;
+  box-shadow:0 12px 30px #0006;
 }
 
 .icon{
@@ -272,7 +282,7 @@ section{
 }
 
 .product{
-  background:#fff;
+  background:var(--card);
   border:1px solid var(--line);
   border-radius:18px;
   overflow:hidden;
@@ -280,7 +290,7 @@ section{
 
 .product-img{
   height:190px;
-  background:#e9e7e1;
+  background:#3a3a3a;
   display:grid;
   place-items:center;
   font-size:5rem;
@@ -295,145 +305,301 @@ section{
   font-size:.72rem;
   font-weight:900;
   text-transform:uppercase;
-  color:#7a4a00;
-  background:#fff0d2;
+  color:#171717;
+  background:#f0a22b;
   padding:5px 8px;
   border-radius:6px;
 }
 
 .rating{
-  color:#d88300;
+  color:#e99a22;
   margin:10px 0;
 }
 
 .product-body p{
   color:var(--muted);
   font-size:.9rem;
-  margin-bottom:16px;
 }
 
-/* BOTÃO */
+/* BOTÕES */
 
 .btn{
   display:inline-block;
-  background:var(--dark);
-  color:#fff;
-  padding:11px 15px;
+  background:var(--brand);
+  color:#111;
+  padding:12px 18px;
   border-radius:9px;
-  font-weight:800;
+  font-weight:900;
+  transition:.2s;
 }
 
 .btn:hover{
-  background:var(--brand);
-  color:#111;
+  background:#f0a22b;
+  transform:translateY(-1px);
 }
 
 /* ARTIGOS */
 
-.article-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
 .article{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:22px;
+  max-width:900px;
+  margin:auto;
 }
 
-.article small{
-  color:#8a5a12;
-  font-weight:800;
+.article-intro{
+  color:var(--muted);
+  font-size:1.08rem;
+  margin-bottom:30px;
+}
+
+.article h2{
+  margin-top:38px;
+  margin-bottom:15px;
+  color:#fff;
 }
 
 .article h3{
-  margin:8px 0;
+  margin-top:25px;
+  margin-bottom:10px;
+  color:#f0a22b;
 }
 
 .article p{
-  color:var(--muted);
+  margin-bottom:18px;
+  color:#d0d0d0;
+}
+
+.article ul,
+.article ol{
+  margin:15px 0 25px 25px;
+  color:#d0d0d0;
+}
+
+.article li{
+  margin-bottom:8px;
+}
+
+/* CAMINHO */
+
+.breadcrumb{
+  color:#aaa;
+  font-size:.9rem;
+  margin-bottom:25px;
+}
+
+.breadcrumb a{
+  color:var(--brand);
+}
+
+/* DESTAQUE DE PRODUTO */
+
+.product-highlight{
+  background:#303030;
+  border:1px solid #555;
+  border-left:5px solid var(--brand);
+  border-radius:16px;
+  padding:25px;
+  margin:30px 0;
+  box-shadow:0 10px 30px #0005;
+}
+
+.product-label{
+  display:inline-block;
+  background:var(--brand);
+  color:#111;
+  padding:6px 10px;
+  border-radius:6px;
+  font-size:.75rem;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.product-info h2{
+  margin-top:0;
+}
+
+.product-details{
+  background:#252525;
+  border:1px solid #414141;
+  border-radius:10px;
+  padding:16px;
+  margin:18px 0;
+}
+
+.product-details li{
+  color:#ddd;
+}
+
+.product-action{
+  margin-top:20px;
+}
+
+.affiliate-notice{
+  font-size:.82rem;
+  color:#999;
+  margin-top:15px;
+}
+
+/* CAIXAS DE DICA/ATENÇÃO */
+
+.tip-box,
+.warning-box{
+  padding:20px;
+  border-radius:12px;
+  margin:25px 0;
+}
+
+.tip-box{
+  background:#303b32;
+  border:1px solid #4d6851;
+}
+
+.warning-box{
+  background:#3d3325;
+  border:1px solid #765b32;
+}
+
+.tip-box strong,
+.warning-box strong{
+  color:#f0a22b;
+}
+
+/* LISTA DE CHECK */
+
+.check-list{
+  list-style:none;
+  margin-left:0 !important;
+}
+
+.check-list li{
+  position:relative;
+  padding-left:30px;
+  margin-bottom:12px;
+}
+
+.check-list li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:var(--brand);
+  font-weight:900;
+}
+
+/* CTA FINAL */
+
+.final-cta{
+  background:
+    linear-gradient(
+      135deg,
+      #181818,
+      #302515
+    );
+  border:1px solid #4d402e;
+  border-radius:18px;
+  padding:30px;
+  margin-top:40px;
+  text-align:center;
+}
+
+.final-cta h2{
+  margin-top:0;
+}
+
+.final-cta p{
+  color:#ccc;
+}
+
+/* CONTEÚDO RELACIONADO */
+
+.related-content{
+  margin-top:50px;
+}
+
+.related-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.related-card{
+  background:#303030;
+  border:1px solid #444;
+  border-radius:14px;
+  padding:20px;
+  transition:.2s;
+}
+
+.related-card:hover{
+  border-color:var(--brand);
+  transform:translateY(-3px);
+}
+
+.related-card h3{
+  margin-top:0;
+  color:#fff;
+}
+
+.related-card p{
+  color:#aaa;
+  font-size:.9rem;
 }
 
 /* SOBRE */
 
-.about{
-  background:#191919;
-  color:#fff;
-}
-
-.about .section-head p{
-  color:#ccc;
-}
-
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:35px;
+  gap:30px;
 }
 
-.about-box{
-  border:1px solid #444;
+.about{
+  background:var(--card);
+  border:1px solid var(--line);
   border-radius:16px;
   padding:25px;
 }
 
-.about-box p{
-  color:#ccc;
-  margin-top:10px;
-}
-
-.notice{
-  margin-top:20px;
-  background:#fff7e8;
-  border-left:4px solid var(--brand);
-  padding:15px;
-  color:#533300;
-  border-radius:8px;
-  font-size:.9rem;
+.about p{
+  color:var(--muted);
+  margin-bottom:15px;
 }
 
 /* RODAPÉ */
 
 footer{
-  background:#111;
-  color:#ccc;
-  padding:45px 0;
+  background:#121212;
+  color:#fff;
+  padding:50px 0 25px;
+  border-top:1px solid #3a3a3a;
 }
 
 .footer-grid{
   display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:30px;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:35px;
 }
 
 footer h3{
-  color:#fff;
-  margin-bottom:12px;
+  margin-bottom:15px;
 }
 
+footer p,
 footer a{
-  display:block;
-  margin:6px 0;
+  color:#aaa;
 }
 
 footer a:hover{
   color:var(--brand);
 }
 
-.copy{
+.footer-bottom{
   border-top:1px solid #333;
-  margin-top:30px;
+  margin-top:35px;
   padding-top:20px;
-  font-size:.82rem;
+  color:#777;
+  font-size:.85rem;
 }
 
-.hidden{
-  display:none!important;
-}
-
-/* RESPONSIVIDADE */
+/* RESPONSIVO */
 
 @media(max-width:850px){
 
@@ -447,7 +613,7 @@ footer a:hover{
   }
 
   .products,
-  .article-grid{
+  .related-grid{
     grid-template-columns:1fr 1fr;
   }
 
@@ -479,7 +645,7 @@ footer a:hover{
 
   .grid,
   .products,
-  .article-grid,
+  .related-grid,
   .footer-grid{
     grid-template-columns:1fr;
   }
@@ -502,5 +668,13 @@ footer a:hover{
 
   .search button{
     padding:14px;
+  }
+
+  h1{
+    font-size:2.7rem;
+  }
+
+  section{
+    padding:50px 0;
   }
 }
